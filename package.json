@@ -1,0 +1,29 @@
+{
+  "name": "fcc-exercise-tracker",
+  "version": "0.0.1",
+  "description": "freeCodeCamp Exercise Tracker Submission",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/duncanjbain/fcc-exercise-tracker.git"
+  },
+  "keywords": [
+    "freeCodeCamp",
+    "fcc",
+    "express",
+    "node",
+    "api"
+  ],
+  "author": "Duncan Bain",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/duncanjbain/fcc-exercise-tracker/issues"
+  },
+  "homepage": "https://github.com/duncanjbain/fcc-exercise-tracker#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
