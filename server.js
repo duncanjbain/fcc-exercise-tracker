@@ -7,6 +7,8 @@ import GetAllUsers from './controllers/GetAllUsers';
 import GetUserLog from './controllers/GetUserLog';
 import LogExercise from './controllers/LogExercise';
 
+mongoose.Promise = global.Promise;
+
 require('dotenv').config();
 
 const app = express();
@@ -41,5 +43,5 @@ app.get('/', (req, res) => {
 
 app.post('/api/exercise/new-user', AddUser);
 app.get('/api/exercise/users', GetAllUsers);
-app.get('/api/exercise/log/:userid', GetUserLog);
-app.get('/api/exercise/add', LogExercise);
+app.get('/api/exercise/log/:userId', GetUserLog);
+app.post('/api/exercise/add', LogExercise);

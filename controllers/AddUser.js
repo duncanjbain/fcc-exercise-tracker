@@ -4,7 +4,7 @@ import userSchema from '../models/User';
 const User = mongoose.model('User', userSchema);
 
 const addNewUser = (req, res) => {
-  const newUser = new User(req.body);
+  const newUser = new User({ userName: req.body.username });
   newUser
     .save()
     .then(() => res.json(newUser))

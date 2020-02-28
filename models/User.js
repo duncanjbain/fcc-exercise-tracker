@@ -20,4 +20,15 @@ const userSchema = new Schema({
   exerciseLog: [exerciseSchema],
 });
 
+userSchema.pre('save', function doesUserExist(next) {
+  const self = this;
+  mongoose.models.User.findOne({ userName: self.username }, (err, user) => {
+    if (!user) {
+      next();
+    } else {
+      next(new Error('Username already exists pre middleware!'));
+    }
+  });
+});
+
 export default userSchema;

@@ -3,9 +3,9 @@ import mongoose from 'mongoose';
 const { Schema } = mongoose;
 
 const exerciseSchema = new Schema({
-  exerciseDescription: String,
-  exerciseDuration: Number,
-  exerciseDate: {
+  description: String,
+  duration: Number,
+  date: {
     type: Date,
     default: Date.now,
   },

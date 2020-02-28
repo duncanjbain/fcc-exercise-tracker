@@ -4,10 +4,11 @@ import userSchema from '../models/User';
 const User = mongoose.model('User', userSchema);
 
 const logExercise = (req, res) => {
+  console.log(req.body);
   User.findOneAndUpdate(
-    { _id: req.body.id },
+    { _id: req.body.userId },
     {
-      $push: { log: req.body },
+      $push: { exerciseLog: req.body },
       $inc: { count: 1 },
     },
     (error, documents) =>

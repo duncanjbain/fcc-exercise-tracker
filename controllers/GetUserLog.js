@@ -14,15 +14,16 @@ const getUserLog = (req, res) => {
     toDate ? Date.parse(currentDate) < Date.parse(toDate) : currentDate;
 
   User.findById(userId).then(user => {
-    const exerciseLogs = user.exerciseLogs
+    console.log(user);
+    const exerciseLog = user.exerciseLog
       .filter(log => fromFilter(log.date, from))
       .filter(log => toFilter(log.date, to));
-
-    if (limit && limit < exerciseLogs.length) {
-      exerciseLogs.length = limit;
-      res.send(exerciseLogs);
+      console.log(exerciseLog);
+    if (limit && limit < exerciseLog.length) {
+      exerciseLog.length = limit;
+      res.send(exerciseLog);
     } else {
-      res.send(exerciseLogs)
+      res.send(exerciseLog);
     }
   });
 };
