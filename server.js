@@ -1,8 +1,11 @@
-const express = require('express');
-const mongo = require('mongodb');
-const mongoose = require('mongoose');
-const bodyParser = require('body-parser');
-const cors = require('cors');
+import mongoose from 'mongoose';
+import express from 'express';
+import bodyParser from 'body-parser';
+
+import AddUser from './controllers/AddUser';
+import GetAllUsers from './controllers/GetAllUsers';
+import GetUserLog from './controllers/GetUserLog';
+import LogExercise from './controllers/LogExercise';
 
 require('dotenv').config();
 
@@ -34,3 +37,8 @@ const server = app.listen(app.get('port'), () => {
 app.get('/', (req, res) => {
   res.send('Hello world!');
 });
+
+app.post('/api/exercise/new-user', AddUser);
+app.get('/api/exercise/users', GetAllUsers);
+app.get('/api/exercise/log/:userid', GetUserLog);
+app.get('/api/exercise/add', LogExercise);
