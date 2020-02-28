@@ -34,8 +34,9 @@ const server = app.listen(app.get('port'), () => {
   console.log(`Express running on Port ${server.address().port}`);
 });
 
+app.use(express.static('public'))
 app.get('/', (req, res) => {
-  res.send('Hello world!');
+  res.sendFile(__dirname + '/views/index.html')
 });
 
 app.post('/api/exercise/new-user', AddUser);
