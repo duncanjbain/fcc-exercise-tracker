@@ -1,6 +1,5 @@
 import mongoose from 'mongoose';
 import userSchema from '../models/User';
-import logExercise from './LogExercise';
 
 const User = mongoose.model('User', userSchema);
 
